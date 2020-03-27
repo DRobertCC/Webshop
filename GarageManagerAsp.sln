@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GarageManagerAsp(4)", "Y:\_Codecool\4c# .net\Practice Projects\GarageManagerAsp\", "{E0B5B47B-1214-4BEA-96A2-90118CA1A220}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62096"
+		Debug.AspNetCompiler.PhysicalPath = "Y:\_Codecool\4c# .net\Practice Projects\GarageManagerAsp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62096\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62096"
+		Release.AspNetCompiler.PhysicalPath = "Y:\_Codecool\4c# .net\Practice Projects\GarageManagerAsp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62096\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62096"
+		SlnRelativePath = "Y:\_Codecool\4c# .net\Practice Projects\GarageManagerAsp\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0B5B47B-1214-4BEA-96A2-90118CA1A220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B5B47B-1214-4BEA-96A2-90118CA1A220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E44C1A53-6059-4411-B14B-37FDC2348FDB}
+	EndGlobalSection
+EndGlobal
