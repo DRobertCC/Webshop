@@ -22,12 +22,14 @@ Car parts webshop written in C# (ASP .NET Framework)
 - Entity Framework (Database-First Approach)
 - Object relational mapping (ORM)
 - Identity Framework (Owin)
+- Secured Views (Management)
 
 ### How to use:
 ```
 Open as website
 In SQL Server Create Database 'Garage'
 Run Script.sql
+Build & Run in browser
 ```
 
 ## About

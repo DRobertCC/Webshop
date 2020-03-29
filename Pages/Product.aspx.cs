@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Linq;
 
 public partial class Pages_Product : System.Web.UI.Page
@@ -13,21 +14,29 @@ public partial class Pages_Product : System.Web.UI.Page
         // Check if a productId parameter exist in the URL
         if (!string.IsNullOrWhiteSpace(Request.QueryString["id"]))
         {
-            string clientId = "-1";
-            int id = Convert.ToInt32(Request.QueryString["id"]); // Retrieving the value of the Id parameter from the URL
-            int amount = Convert.ToInt32(ddlAmount.SelectedValue);// Retrieving the value of the amount parameter from the Dropdown list
+            string clientId = Context.User.Identity.GetUserId();
 
-            Cart cart = new Cart
+            if (clientId != null)
             {
-                Amount = amount,
-                ClientID = clientId,
-                DatePurchased = DateTime.Now,
-                IsInCart = true,
-                ProductID = id
-            };
+                int id = Convert.ToInt32(Request.QueryString["id"]); // Retrieving the value of the Id parameter from the URL
+                int amount = Convert.ToInt32(ddlAmount.SelectedValue); // Retrieving the value of the amount parameter from the Dropdown list
 
-            CartModel model = new CartModel();
-            lblResult.Text = model.InsertCart(cart);
+                Cart cart = new Cart
+                {
+                    Amount = amount,
+                    ClientID = clientId,
+                    DatePurchased = DateTime.Now,
+                    IsInCart = true,
+                    ProductID = id
+                };
+
+                CartModel model = new CartModel();
+                lblResult.Text = model.InsertCart(cart);
+            }
+            else
+            {
+                lblResult.Text = "Please log in first to order items!";
+            }
         }
     }
 

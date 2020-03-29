@@ -47,9 +47,10 @@
     </UpdateParameters>
 </asp:SqlDataSource>
     <br />
+    <hr />
+    <br />
     <asp:LinkButton ID="LinkButton2" runat="server" CssClass="button" PostBackUrl="~/Pages/Management/ManageProductTypes.aspx">Add new Type</asp:LinkButton>
     <p style="clear: both"></p>
-<br />
 <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="sdsProductTypes" Width="50%" AllowSorting="True" DataKeyNames="ID" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
     <AlternatingRowStyle BackColor="White" />
     <Columns>

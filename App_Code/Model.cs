@@ -52,3 +52,13 @@ public partial class ProductType
 
     public virtual ICollection<Product> Products { get; set; }
 }
+
+public partial class UserInformation
+{
+    public int Id { get; set; }
+    public string GUID { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Address { get; set; }
+    public int PostalCode { get; set; }
+}
