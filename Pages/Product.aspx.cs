@@ -52,7 +52,7 @@ public partial class Pages_Product : System.Web.UI.Page
             // Fill page with data
             lblTitle.Text = product.Name;
             lblDescription.Text = product.Description;
-            lblPrice.Text = "Price per unit:<br/>£ " + product.Price;
+            lblPrice.Text = "Price per unit:<br/>€ " + product.Price;
             imgProduct.ImageUrl = "~/Images/Products/" + product.Image;
             lblItemNr.Text = product.ID.ToString();
 

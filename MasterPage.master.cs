@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
@@ -13,7 +14,12 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
         if (user.IsAuthenticated)
         {
-            litStatus.Text = Context.User.Identity.Name;
+            CartModel model = new CartModel();
+            string userId = HttpContext.Current.User.Identity.GetUserId();
+            litStatus.Text = string.Format("{0} ({1})", Context.User.Identity.Name,
+                model.GetAmountOfOrders(userId));
+
+            litStatus.NavigateUrl = (model.GetAmountOfOrders(userId) > 0) ? "~/Pages/ShoppingCart.aspx": "";
 
             lnkLogin.Visible = false;
             lnkRegister.Visible = false;

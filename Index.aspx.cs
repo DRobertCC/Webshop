@@ -34,7 +34,7 @@ public partial class Index : System.Web.UI.Page
                 lblName.Text = product.Name;
                 lblName.CssClass = "productName";
 
-                lblPrice.Text = "$ " + product.Price;
+                lblPrice.Text = "€ " + product.Price;
                 lblPrice.CssClass = "productPrice";
 
                 // Add child controls to Panel

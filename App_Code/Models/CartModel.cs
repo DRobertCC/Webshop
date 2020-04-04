@@ -69,4 +69,63 @@ public class CartModel
             return "Error:" + e;
         }
     }
+
+    public List<Cart> GetOrdersInCart(string userId)
+    {
+        GarageEntities db = new GarageEntities(); // Connection to the DB
+        // A list of not paid items in the cart of the current user
+        List<Cart> orders = (from x in db.Carts
+                             where x.ClientID == userId
+                             && x.IsInCart // Not paid yet
+                             orderby x.DatePurchased
+                             select x).ToList();
+
+        return orders;
+    }
+
+    public int GetAmountOfOrders(string userId)
+    {
+        // The total number of items in the cart (eg. 2 fan, 3 oil = 5)
+        try
+        {
+            GarageEntities db = new GarageEntities(); // Connection to the DB
+            int amount = (from x in db.Carts
+                          where x.ClientID == userId
+                          && x.IsInCart
+                          select x.Amount).Sum();
+
+            return amount;
+        }
+        catch (Exception)
+        {
+
+            return 0;
+        }
+    }
+
+    public void UpdateQuantity(int id, int quantity)
+    {
+        GarageEntities db = new GarageEntities(); // Connection to the DB
+        Cart cart = db.Carts.Find(id);
+        cart.Amount = quantity;
+
+        db.SaveChanges();
+    }
+
+    public void MarkOrdersAsPaid(List<Cart> carts)
+    {
+        GarageEntities db = new GarageEntities(); // Connection to the DB
+
+        if (carts != null)
+        {
+            foreach (Cart cart in carts)
+            {
+                Cart oldCart = db.Carts.Find(cart.ID);
+                oldCart.DatePurchased = DateTime.Now;
+                oldCart.IsInCart = false;
+            }
+
+            db.SaveChanges();
+        }
+    }
 }

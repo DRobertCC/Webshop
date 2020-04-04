@@ -71,6 +71,7 @@ a:visited {
     border: 0;
     clear: both;
 }
+
     .button:hover {
         background: linear-gradient(to bottom, blue, blue);
         -webkit-box-shadow: 0 0 25px #CCC;
@@ -141,4 +142,26 @@ a:visited {
         -webkit-box-shadow: 0 0 25px #CCC;
         -moz-box-shadow: 0 0 25px #ccc;
         box-shadow: 0 0 25px #CCC;
+    }
+
+.cartTable {
+    text-align: center;
+    border: 15px solid #dcdad4;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+    .cartTable input {
+        width: 65px;
+        height: 65px;
+    }
+
+    .cartTable h4 {
+        padding: 0;
+        margin: 0;
+    }
+
+    .cartTable tr td select {
+        width: 100px;
     }

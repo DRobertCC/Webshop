@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
+using System.Web.UI.WebControls;
 
 public partial class Pages_Management_ManageProducts : System.Web.UI.Page
 {
@@ -54,6 +55,8 @@ public partial class Pages_Management_ManageProducts : System.Web.UI.Page
             // Set dropdownlist values
             ddlImage.SelectedValue = product.Image;
             ddlType.SelectedValue = product.TypeID.ToString();
+
+            imgImage.ImageUrl = string.Format("~/Images/Products/{0}", product.Image);
         }
         catch (Exception ex)
         {
@@ -65,6 +68,7 @@ public partial class Pages_Management_ManageProducts : System.Web.UI.Page
     {
         try
         {
+            ddlImage.Items.Clear();
             //Get all filepaths
             string[] images = Directory.GetFiles(Server.MapPath("~/Images/Products/"));
 
@@ -98,5 +102,22 @@ public partial class Pages_Management_ManageProducts : System.Web.UI.Page
         product.Image = ddlImage.SelectedValue;
 
         return product;
+    }
+
+    protected void Upload(object sender, EventArgs e)
+    {
+        if (fuImportImage.HasFile)
+        {
+            string fileName = Path.GetFileName(fuImportImage.PostedFile.FileName);
+            fuImportImage.PostedFile.SaveAs(Server.MapPath("~/Images/Products/") + fileName);
+            GetImages();
+            ddlImage.SelectedValue = fileName;
+            imgImage.ImageUrl = "~/Images/Products/" + ddlImage.SelectedItem.Value;
+        }
+    }
+
+    protected void ddlImage_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        imgImage.ImageUrl = "~/Images/Products/" + ddlImage.SelectedItem.Value;
     }
 }

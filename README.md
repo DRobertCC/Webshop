@@ -6,12 +6,13 @@ Car parts webshop written in C# (ASP .NET Framework)
 
 ## Features:
 
-- Login/Sign Up
-- List product with correspondent image
+- List products with correspondent image
 - See details of a product
-- Add product(s) to Shopping Cart
+- Login/Sign Up
+- Logged in users can add product(s) to Shopping Cart
 - Admin can Manage the stock
-- 
+- Logged in users can edit the contents of their Shopping Cart
+- Logged in users can purchase the items in their Shopping Cart
 
 ## Technologies used:
 
@@ -29,7 +30,7 @@ Car parts webshop written in C# (ASP .NET Framework)
 Open as website
 In SQL Server Create Database 'Garage'
 Run Script.sql
-Build & Run in browser
+Build the Project & Run it in browser
 ```
 
 ## About

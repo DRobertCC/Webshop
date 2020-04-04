@@ -78,7 +78,7 @@ public class ProductModel
                 return product;
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return null;
         }
@@ -95,7 +95,7 @@ public class ProductModel
                 return products;
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return null;
         }
